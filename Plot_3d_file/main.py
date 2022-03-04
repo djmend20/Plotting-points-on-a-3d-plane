@@ -3,7 +3,7 @@
     Date Last Modified: March 4, 2022
     Objective: To use Matplotlib in conjunction with Pandas to 
     be able to plot in a 3d plane by providing the file name and 
-    attributes looking to graph. 
+    attributes to plot the graph. Only three attributes should be provided.  
     
     Before executing script: Install matplotlib and pandas. Have both libraries 
     in the correct file path. If not done right, ModuleNotFoundError is likely to 
