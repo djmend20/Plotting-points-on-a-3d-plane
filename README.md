@@ -11,5 +11,5 @@
   3. Other case could be not cleaning your data properly. Having text or Null 
      values will cause the program to end without producing a graph 
  
-# If you like to learn more about matplotlib: 
+# If you like to learn more about plotting points with matplotlib: 
   https://matplotlib.org/3.5.1/api/_as_gen/matplotlib.pyplot.scatter.html
