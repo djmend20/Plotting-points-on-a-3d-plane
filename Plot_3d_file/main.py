@@ -1,4 +1,4 @@
-''' Name: djmend20
+""" Name: djmend20
     Date Created: March 1, 2022
     Date Last Modified: March 4, 2022
     Objective: To use Matplotlib in conjunction with Pandas to 
@@ -17,47 +17,54 @@
 
 	If you like to learn more about matplotlib: 
 	https://matplotlib.org/3.5.1/api/_as_gen/matplotlib.pyplot.scatter.html
-''' 
+"""
 
 try:
-	import matplotlib.pyplot as plt
-	import pandas as pd
+    import matplotlib.pyplot as plt
+    import pandas as pd
 
-	is_imported = True
+    is_imported = True
 except Exception as e:
-	is_imported = False
-	print('You could not import matplotlib or pandas')
+    is_imported = False
+    print("You could not import matplotlib or pandas")
+
 
 def main():
-	if is_imported:
-		try:
-			file_name = "file_name.csv"
-			fig = plt.figure()
-			ax = fig.add_subplot(projection='3d')
-			
-			data = pd.read_csv(file_name, index_col=False, delimiter=',')
-			# get column names 
-			# go through each
-			target_values = ['attribute_1', 'attribute_2', 'attribute_3']
-			data_to_plot = data.loc[:, target_values]
-			
-			coordinate = []
+    if is_imported:
+        try:
+	    # change "file_name.csv" with the name of your file
+	    # make sure to keep the double commas 
+            file_name = "file_name.csv"
+            fig = plt.figure()
+            ax = fig.add_subplot(projection="3d")
 
-			for posit in data_to_plot.index:
-				for attrib in data_to_plot.columns:
-					coordinate.append(data_to_plot[attrib][posit])
-				
-				ax.scatter(coordinate[0],coordinate[1], coordinate[2], c='#000000' ,marker='o')
-				coordinate = []
-			
+            data = pd.read_csv(file_name, index_col=False, delimiter=",")
 
-			ax.set_xlabel('Saturated Fat (g)')
-			ax.set_ylabel('Sugar (g)')
-			ax.set_zlabel('Fiber (g)')
+	    # change attribute_1 to the exact column name for your x axis 
+	    # change attribute_2 to the exact column name for your y axis 
+	    # change attribute_3 to the exact column name for your z axis 
+            target_values = ["attribute_1", "attribute_2", "attribute_3"]
+            data_to_plot = data.loc[:, target_values]
 
-			plt.show()
-	except Exception as e:
-		print(e)
+            coordinate = []
 
-if __name__ == '__main__':
-	main()
+            for posit in data_to_plot.index:
+                for attrib in data_to_plot.columns:
+                    coordinate.append(data_to_plot[attrib][posit])
+
+                ax.scatter(
+                    coordinate[0], coordinate[1], coordinate[2], c="#000000", marker="o"
+                )
+                coordinate = []
+
+            ax.set_xlabel("Saturated Fat (g)")
+            ax.set_ylabel("Sugar (g)")
+            ax.set_zlabel("Fiber (g)")
+
+            plt.show()
+        except Exception as e:
+            print(e)
+
+
+if __name__ == "__main__":
+    main()
