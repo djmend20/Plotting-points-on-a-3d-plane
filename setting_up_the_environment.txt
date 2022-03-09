@@ -1,0 +1,48 @@
+For Mac Intel Based laptops, some steps may vary for Mac M1 Based laptops
+If Python has yet to be installed: 
+Open terminal 
+Instal Brew, a package manager by copying and pasting then hitting enter within terminal: 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Note not all packages work on the current released version of python so you may want to install python@3.9 or older.
+
+After brew finishes installing then install python by 
+copying and pasting then hitting enter within terminal:
+
+brew install python@3.10 
+
+Note if you wish to refresh the page without closing type into the terminal reset and hit enter
+Note xy refers to your verion of python that has been installed
+
+Run in terminal python3.xy to test if python has been installed 
+
+Now to exit out type exit() then hit enter
+
+Now installing pandas:
+
+
+python3.xy -m pip install pandas 
+
+Now to installing matplotlib: 
+
+python3.xy -m pip install matplotlib
+
+To find where matplotlib and pandas were created type: 
+sudo find / -name matplotlib 
+
+Hit enter. First you will be prompted to enter your password. After doing so you will see a list of file paths. Search through these by hitting command f. Use the keyword python. Copy the row with your version of python you used to install matplotlib and pandas. Paste this somewhere you can copy for later  
+
+Copy the following into the terminal:
+sudo nano /etc/paths 
+
+Hit enter. This opens a file within terminal where you will add what you copied from the previous step. Delete from what you copied, /matplotlib 
+. The purpose is so that the computer knows where the other packages will be installed via python pip.
+
+hit control x. You will be prompted to save so hit y then enter and enter again.
+
+Now try to build the main.py file. 
+
+Sources used: 
+the line sudo nano /etc/paths: 
+https://www.educative.io/edpresso/how-to-add-python-to-the-path-variable-in-mac
+
