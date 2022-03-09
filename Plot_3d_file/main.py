@@ -56,10 +56,10 @@ def main():
                     coordinate[0], coordinate[1], coordinate[2], c="#000000", marker="o"
                 )
                 coordinate = []
-
-            ax.set_xlabel("Saturated Fat (g)")
-            ax.set_ylabel("Sugar (g)")
-            ax.set_zlabel("Fiber (g)")
+		
+            ax.set_xlabel(target_values[0])
+            ax.set_ylabel(target_values[1])
+            ax.set_zlabel(target_values[2])
 
             plt.show()
         except Exception as e:
